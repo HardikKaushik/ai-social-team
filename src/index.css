@@ -11,35 +11,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 96%;
-    --foreground: 0 0% 9%;
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 0 0% 9%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 89%;
-    --popover-foreground: 0 0% 9%;
+    --popover: 217 33% 17%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 243 75% 58%;
-    --primary-foreground: 225 100% 96%;
+    --primary: 271 91% 65%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 0 0% 32%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 197 100% 50%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 0 0% 63%;
-    --muted-foreground: 0 0% 9%;
+    --muted: 217 33% 25%;
+    --muted-foreground: 210 20% 70%;
 
-    --accent: 250 100% 97%;
-    --accent-foreground: 258 89% 66%;
+    --accent: 271 91% 65%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 72% 50%;
     --destructive-foreground: 0 85% 97%;
 
-    --border: 0 0% 83%;
-    --input: 0 0% 83%;
-    --ring: 243 75% 58%;
+    --border: 217 33% 25%;
+    --input: 217 33% 25%;
+    --ring: 271 91% 65%;
 
-    --radius: 1.25rem;
+    --radius: 1rem;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(271 91% 65%), hsl(197 100% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(197 100% 50%), hsl(271 91% 65%));
+    --gradient-accent: linear-gradient(180deg, hsl(271 91% 65% / 0.1), transparent);
+    
+    --shadow-glow: 0 0 40px hsl(271 91% 65% / 0.3);
+    --shadow-glow-secondary: 0 0 40px hsl(197 100% 50% / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
@@ -116,6 +123,17 @@ All colors MUST be HSL.
     }
   }
 
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient 15s ease infinite;
@@ -129,6 +147,10 @@ All colors MUST be HSL.
     animation: fade-in 1s ease-out;
   }
 
+  .animate-scale-in {
+    animation: scale-in 0.5s ease-out;
+  }
+
   .delay-700 {
     animation-delay: 700ms;
   }
@@ -138,8 +160,8 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 98%;
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
 
     --card: 0 0% 14%;
     --card-foreground: 0 0% 98%;
