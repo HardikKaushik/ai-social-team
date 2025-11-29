@@ -42,7 +42,7 @@ const FinalCTA = () => {
                   className="text-xl md:text-2xl px-12 py-8 md:px-16 md:py-10 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_60px_rgba(168,85,247,0.5)] hover:shadow-[0_0_80px_rgba(168,85,247,0.7)] group/button relative overflow-hidden"
                   asChild
                 >
-                  <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
+                  <a href="https://forms.gle/QjffMMsmiNXD5K39A" target="_blank" rel="noopener noreferrer">
                     <span className="relative z-10 flex items-center font-bold">
                       Activate My Free Access
                       <ArrowRight className="ml-3 group-hover/button:translate-x-2 transition-transform" />

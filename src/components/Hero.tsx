@@ -47,7 +47,7 @@ const Hero = () => {
             className="text-lg px-10 py-7 bg-gradient-to-r from-primary to-secondary hover:opacity-90 transition-all hover:scale-105 shadow-[0_0_40px_rgba(168,85,247,0.4)] hover:shadow-[0_0_60px_rgba(168,85,247,0.6)] group relative overflow-hidden"
             asChild
           >
-            <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://forms.gle/QjffMMsmiNXD5K39A" target="_blank" rel="noopener noreferrer">
               <span className="relative z-10 flex items-center">
                 Get 2 Months Free
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
