@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 
 type ChatEvent = {
   id: string;
+  
   author: "user" | "ai";
   label: string;
   text: string;
@@ -49,8 +50,12 @@ const chatSequence: ChatEvent[] = [
 const HowItWorksChat = () => {
   const [visibleEvents, setVisibleEvents] = useState<ChatEvent[]>([]);
   const [stage, setStage] = useState<"chat" | "post" | "posting" | "results">("chat");
+  const [loopId, setLoopId] = useState(0);
 
   useEffect(() => {
+    setVisibleEvents([]);
+    setStage("chat");
+
     const timeouts: number[] = [];
     let time = 400;
 
@@ -67,13 +72,18 @@ const HowItWorksChat = () => {
         timeouts.push(window.setTimeout(() => setStage("post"), time + 800));
         timeouts.push(window.setTimeout(() => setStage("posting"), time + 2400));
         timeouts.push(window.setTimeout(() => setStage("results"), time + 4200));
+        timeouts.push(
+          window.setTimeout(() => {
+            setLoopId((prev) => prev + 1);
+          }, time + 9000)
+        );
       }
     });
 
     return () => {
       timeouts.forEach((id) => window.clearTimeout(id));
     };
-  }, []);
+  }, [loopId]);
 
   const isPosting = stage === "posting";
   const isResults = stage === "results";
